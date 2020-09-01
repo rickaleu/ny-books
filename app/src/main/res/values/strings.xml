@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">NyBooks</string>
+
+    <!-- Books List -->
+    <string name="books_title">Books</string>
+    <string name="book_details_title">Book Details</string>
+    <string name="books_view_flipper_error_401">Não autorizado</string>
+    <string name="books_view_flipper_error_400_generic">Erro não tratado</string>
+    <string name="books_view_flipper_error_500">Erro catastrófico</string>
+
+    <!-- Books Detail -->
+    <string name="books_detail_title">Título</string>
+    <string name="books_detail_description">Descrição</string>
+
+</resources>
