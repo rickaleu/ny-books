@@ -1,7 +1,7 @@
 package br.com.ricardo.nybooks.presentation.books
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import br.com.ricardo.nybooks.data.remote.NYTService
+import br.com.ricardo.nybooks.data.remote.NYService
 import br.com.ricardo.nybooks.presentation.books.bookslist.repository.BookRepository
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.Before
@@ -24,7 +24,7 @@ class BooksRepostoryTest {
     private lateinit var mockWebServer: MockWebServer
 
     @Mock
-    private lateinit var service: NYTService
+    private lateinit var service: NYService
 
     @Before
     fun createService() {
@@ -33,18 +33,12 @@ class BooksRepostoryTest {
             .addConverterFactory(MoshiConverterFactory.create())
             .baseUrl("https://api.nytimes.com/svc/books/v3/lists.json")
             .build()
-            .create(NYTService::class.java)
+            .create(NYService::class.java)
     }
 
 
     @Test
     fun `fetch getBook success`() {
-        //Arrenge
 
-
-        //Act
-
-
-        //Assert
     }
 }

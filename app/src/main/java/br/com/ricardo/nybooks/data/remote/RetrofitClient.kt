@@ -1,11 +1,11 @@
 package br.com.ricardo.nybooks.data.remote
 
+import br.com.ricardo.nybooks.base.NyConstants
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 object RetrofitClient {
-
     private lateinit var retrofit : Retrofit
 
      private fun initRetrofit() : Retrofit {
@@ -13,12 +13,12 @@ object RetrofitClient {
 
          retrofit = Retrofit.Builder()
              .addConverterFactory(MoshiConverterFactory.create())
-             .baseUrl("https://api.nytimes.com/svc/books/v3/")
+             .baseUrl(NyConstants.NY_URL)
              .client(client.build())
              .build()
 
          return retrofit
      }
 
-    val service: NYTService = initRetrofit().create(NYTService::class.java)
+    val SERVICE: NYService = initRetrofit().create(NYService::class.java)
 }

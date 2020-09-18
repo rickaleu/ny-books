@@ -1,9 +1,6 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
-
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -24,8 +21,16 @@ android {
         }
     }
 
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
     viewBinding {
-        enabled true
+        enabled = true
     }
 
 }
@@ -34,8 +39,6 @@ ext {
     supportVersion = "28.0.0"
     retrofitVersion = "2.6.0"
     androidrx_version = "2.1.1"
-    rxjava_version = "2.2.6"
-    rxbinding2_version = "2.1.1"
 }
 
 dependencies {
@@ -47,13 +50,11 @@ dependencies {
 
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 
+    implementation "androidx.fragment:fragment-ktx:1.2.5"
+
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
     implementation("com.squareup.moshi:moshi-kotlin:1.9.2")
-
-    implementation "io.reactivex.rxjava2:rxandroid:$androidrx_version"
-    implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
-    implementation "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:$rxbinding2_version"
 
     kapt("com.squareup.moshi:moshi-kotlin-codegen:1.9.2")
 

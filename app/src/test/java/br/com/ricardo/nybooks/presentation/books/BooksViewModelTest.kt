@@ -29,7 +29,7 @@ class BooksViewModelTest {
 
     @Test
     fun `fetch getBooks with liveData success`() {
-        //Arrange
+
         val books = listOf(
             Book("title 1", "ricardo", "description 1")
         )
@@ -39,10 +39,10 @@ class BooksViewModelTest {
         viewModel.mBooksMutableLiveData.observeForever(booksLiveDataObserver)
         viewModel.mViewFlipperMutableLiveData.observeForever(viewFlipperLiveDataObserver)
 
-        //Atc
+
         viewModel.getBooks()
 
-        //Assert
+
         verify(booksLiveDataObserver).onChanged(books)
         verify(viewFlipperLiveDataObserver).onChanged(Pair(1, null))
     }

@@ -10,7 +10,7 @@ import retrofit2.Response
 
 class BookRepositoryImpl : BookRepository {
 
-    private val mService = RetrofitClient.service
+    private val mService = RetrofitClient.SERVICE
 
     override fun getBookList(booksResultCallBack: (result: BooksResult) -> Unit) {
         mService.listBooks().enqueue(object : Callback<BookBodyResponse> {

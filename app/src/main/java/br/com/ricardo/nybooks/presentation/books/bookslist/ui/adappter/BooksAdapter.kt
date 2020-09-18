@@ -26,15 +26,20 @@ class BooksAdapter(private val listBooks: List<Book>,
         holder.bindView(listBooks[position])
     }
 
-    class BooksViewHolder(binding: ItemBookBinding, private val onClickListener: ((Book: Book) -> Unit))
+    class BooksViewHolder(private val binding: ItemBookBinding, private val onClickListener: ((Book: Book) -> Unit))
         : RecyclerView.ViewHolder(binding.root) {
 
-        private val title = binding.itemTextTitle
-        private val author = binding.itemTextAutor
+        //Replace itemView for DataBinding
+//        private val title = binding.itemTextTitle
+//        private val author = binding.itemTextAutor
 
         fun bindView(book: Book) {
-            title.text = book.title
-            author.text = book.author
+
+            binding.book = book
+
+            //Replace itemView for DataBinding
+//            title.text = book.title
+//            author.text = book.author
 
             itemView.setOnClickListener {
                 onClickListener.invoke(book)

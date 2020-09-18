@@ -1,4 +1,4 @@
-package br.com.ricardo.nybooks.base
+package br.com.ricardo.nybooks.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -11,7 +11,7 @@ class ViewModelFactory(private val repository: BookRepository) : ViewModelProvid
         if (modelClass.isAssignableFrom(BooksViewModel::class.java)) {
             return BooksViewModel(repository) as T
         }
-        throw IllegalArgumentException("Unknown View Model Class ")
+        throw IllegalArgumentException("Classe desconhecida")
     }
 
 }
